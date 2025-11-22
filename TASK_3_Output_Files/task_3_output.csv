@@ -1,0 +1,76 @@
+              id       date  store_nbr                      family     sales  \
+0              0 2013-01-01          1                  AUTOMOTIVE     0.000   
+1              1 2013-01-01          1                   BABY CARE     0.000   
+2              2 2013-01-01          1                      BEAUTY     0.000   
+3              3 2013-01-01          1                   BEVERAGES     0.000   
+4              4 2013-01-01          1                       BOOKS     0.000   
+...          ...        ...        ...                         ...       ...   
+3000883  3000883 2017-08-15          9                     POULTRY   438.133   
+3000884  3000884 2017-08-15          9              PREPARED FOODS   154.553   
+3000885  3000885 2017-08-15          9                     PRODUCE  2419.729   
+3000886  3000886 2017-08-15          9  SCHOOL AND OFFICE SUPPLIES   121.000   
+3000887  3000887 2017-08-15          9                     SEAFOOD    16.000   
+
+         onpromotion  
+0                  0  
+1                  0  
+2                  0  
+3                  0  
+4                  0  
+...              ...  
+3000883            0  
+3000884            1  
+3000885          148  
+3000886            8  
+3000887            0  
+
+[3000888 rows x 6 columns]
+
+Aggregating to daily totals :
+           date          sales  onpromotion
+0    2013-01-01    2511.618999            0
+1    2013-01-02  496092.417944            0
+2    2013-01-03  361461.231124            0
+3    2013-01-04  354459.677093            0
+4    2013-01-05  477350.121229            0
+...         ...            ...          ...
+1679 2017-08-11  826373.722022        14179
+1680 2017-08-12  792630.535079         8312
+1681 2017-08-13  865639.677471         9283
+1682 2017-08-14  760922.406081         8043
+1683 2017-08-15  762661.935939        10605
+
+[1684 rows x 3 columns]
+
+Feature engineering :
+0       0
+1       0
+2       0
+3       0
+4       1
+       ..
+1679    0
+1680    1
+1681    1
+1682    0
+1683    0
+Name: is_weekend, Length: 1684, dtype: int64
+
+Features shape: (1684, 22)
+Target shape: (1684,)
+
+Train on 1347 days, test on 337 days (chronological split).
+
+Training Linear Regression model :
+
+LinearRegression
+?i
+LinearRegression()
+
+Evaluation metrics:
+  train_rmse: 106004.8323
+  train_mae: 80033.0621
+  train_r2: 0.7568
+  test_rmse: 157119.1919
+  test_mae: 129115.8945
+  test_r2: 0.2837
